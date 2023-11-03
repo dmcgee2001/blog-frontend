@@ -18,24 +18,26 @@ function PostsNew() {
       <div>
         Image: <input type="image" src="" alt="" />
       </div>
+      <div>
+        <button>Post</button>
+      </div>
     </div>
   );
 }
 
-function PostsIndex() {
+function PostsIndex(props) {
+  console.log(props);
   return (
     <div id="posts-index">
       <h1>All posts</h1>
-      <div className="posts">
-        <h3>Blog Post 1</h3>
-        <img src="" alt="" />
-        <p>This is the body of the first blog post.</p>
-      </div>
-      <div>
-        <h3>Blog Post 2</h3>
-        <img src="" alt="" />
-        <p>This is the body of the second blog post.</p>
-      </div>
+      {props.posts.map((post) => (
+        <div key={post.id}>
+          <h2>{post.title}</h2>
+          <p>{post.body}</p>
+          <img src="{post.image}" alt="" />
+          <button>Edit Post</button>
+        </div>
+      ))}
     </div>
   );
 }
@@ -47,10 +49,30 @@ function Footer() {
   );
 }
 function Content() {
+  let posts = [
+    {
+      id: 1,
+      title: "Title is Here",
+      body: "Body is Here",
+      image: "___",
+    },
+    {
+      id: 2,
+      title: "Title or Something",
+      body: "Body of blog. This is the body of a blog post and now I have to find an image url to try and get an image for a random blog post.",
+      image: "___",
+    },
+    {
+      id: 3,
+      title: "Title Yo",
+      body: "This is the body of an example blog post that requires words inside of it so here are some words and some more words.",
+      image: "___",
+    },
+  ];
   return (
     <div>
       <PostsNew />
-      <PostsIndex />
+      <PostsIndex posts={posts} />
     </div>
   );
 }
