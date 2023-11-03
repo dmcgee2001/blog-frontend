@@ -10,9 +10,10 @@ export function PostsNew() {
       </div>
       <div>
         Image: <input type="image" src="" alt="" />
+        <button>upload image</button>
       </div>
       <div>
-        <button>Post</button>
+        <button className="post-button">Post</button>
       </div>
     </div>
   );
