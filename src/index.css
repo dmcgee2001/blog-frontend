@@ -2,26 +2,61 @@
   width: 300px;
 }
 
+/* Header */
+header {
+  text-align: left;
+  margin: 5px;
+}
+header a {
+  color: rgb(169, 5, 5);
+}
+header a:hover {
+  color: white;
+}
+/* Header Done */
+
+/* Body */
+body {
+  background-image: url("https://previews.123rf.com/images/shooarts/shooarts1710/shooarts171000010/87576047-a-food-and-cooking-seamless-pattern-on-brown-background.jpg");
+}
+/* Body Done */
 html {
   scroll-behavior: smooth;
   text-align: center;
+  font-size: x-large;
 }
 
   
 input[type=text] {
-  box-sizing: border-box;
-  padding:20px;
-  margin:4px 0;
-  border:0;
+  margin: 20px;
+  padding: 20px;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  border: none;
+  border-radius: 0.4rem;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 }
 
-h2 {
-  border-top: 5px solid black;
-  padding: 20px;
-}
 #posts-new {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 300px;
+  margin-right: 300px;
   padding-bottom: 100px;
   border: 5px ridge rgb(78, 1, 1);
-  border-radius: 10px;
+  border-radius: 20px;
+  background-color: white;
+}
+.cards {
+  display: flow-root;
+  margin-left: 500px;
+  margin-right: 500px;
+}
+.card {
+  border: 5px solid black;
+  padding: 35px;
+  border-radius: 20px;
+  background-color: white;
+  margin-bottom: 15px;
 }
