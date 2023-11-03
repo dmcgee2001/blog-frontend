@@ -3,7 +3,7 @@ export function PostsIndex(props) {
   console.log(props);
   return (
     <div id="posts-index">
-      <h1>All Posts</h1>
+      <h1 className="All-posts">All Posts</h1>
       <div className="cards">
         {props.posts.map((post) => (
           <div key={post.id} className="card">
