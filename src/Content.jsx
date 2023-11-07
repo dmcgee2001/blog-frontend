@@ -1,7 +1,7 @@
 import { PostsIndex } from "./PostsIndex";
 import { PostsNew } from "./PostsNew";
 import { Modal } from "./Modal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 export function Content() {
   const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
@@ -23,10 +23,10 @@ export function Content() {
     setIsPostsShowVisible(false);
   };
 
+  useEffect(handleIndexPosts, []);
   return (
     <div>
       <PostsNew />
-      <button onClick={handleIndexPosts}>Load Posts</button>
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         <p>Hello, testing testing.</p>
