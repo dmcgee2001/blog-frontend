@@ -26,7 +26,7 @@ export function Content() {
     <div>
       <PostsNew />
       <PostsIndex posts={posts} />
-      <Modal />
+      <Modal></Modal>
     </div>
   );
 }
