@@ -29,7 +29,16 @@ export function PostsIndex(props) {
             <div className="card-body">
               <h5 className="card-title">{post.title}</h5>
               <p className="card-text">{post.body}</p>
-              <button onClick={() => props.onShowPost(post)}>More Info</button>
+              <button
+                type="button"
+                onClick={() => props.onShowPost(post)}
+                className="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                Read More
+              </button>
+              {/* ;<button onClick={() => props.onShowPost(post)}>More Info</button> */}
             </div>
           </div>
         </div>
