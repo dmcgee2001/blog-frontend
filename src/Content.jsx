@@ -3,14 +3,19 @@ import { PostsNew } from "./PostsNew";
 import { Modal } from "./Modal";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { PostsShow } from "./PostsShow";
+
 export function Content() {
   const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
 
-  const handleShowPost = () => {
-    setIsPostsShowVisible(true);
-  };
-
   const [posts, setPosts] = useState([]);
+
+  const [currentPost, setCurrentPost] = useState({});
+
+  const handleShowPost = (post) => {
+    setIsPostsShowVisible(true);
+    setCurrentPost(post);
+  };
 
   const handleIndexPosts = () => {
     axios.get("http://localhost:3000/posts.json").then((response) => {
@@ -29,7 +34,7 @@ export function Content() {
       <PostsNew />
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <p>Hello, testing testing.</p>
+        <PostsShow post={currentPost} />
       </Modal>
     </div>
   );
