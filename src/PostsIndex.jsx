@@ -21,7 +21,7 @@
 // }
 export function PostsIndex(props) {
   return (
-    <div className="row row-cols-1 row-cols-md-2 g-4">
+    <div className="row row-cols-1 row-cols-md-3 g-4">
       {props.posts.map((post) => (
         <div className="col" key={post.id}>
           <div className="card">

@@ -1,4 +1,5 @@
 import axios from "axios";
+
 export function PostsNew() {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -8,7 +9,7 @@ export function PostsNew() {
       .post("http://localhost:3000/posts.json", params)
       .then((response) => {
         console.log(response.data);
-        event.target.rest();
+        event.target.reset();
       })
       .catch((error) => {
         console.log(error.response.data.errors);
