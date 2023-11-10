@@ -36,7 +36,7 @@ export function PostsIndex(props) {
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
               >
-                Read More
+                Edit Post
               </button>
               {/* ;<button onClick={() => props.onShowPost(post)}>More Info</button> */}
             </div>

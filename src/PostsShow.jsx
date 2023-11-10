@@ -1,10 +1,29 @@
+import axios from "axios";
 export function PostsShow(props) {
-  console.log(props);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const params = new FormData(event.target);
+    axios.patch(`http://localhost:3000/posts/${props.post.id}.json`, params).then((response) => {
+      console.log(response);
+      event.target.reset();
+    });
+  };
   return (
     <div id="posts-show">
-      <h2>{props.post.title}</h2>
-      <p>{props.post.body}</p>
-      <img src={props.post.image} alt="" />
+      <form onSubmit={handleSubmit}>
+        <div>
+          Title: <input defaultValue={props.post.title} type="text" name="title" id="" />
+        </div>
+        <div>
+          Body: <input defaultValue={props.post.body} type="text" name="body" id="" />
+        </div>
+        <div>
+          Image URL: <input defaultValue={props.post.image} type="text" name="image" />
+        </div>
+        <div>
+          <button type="submit">Update</button>
+        </div>
+      </form>
     </div>
   );
 }
