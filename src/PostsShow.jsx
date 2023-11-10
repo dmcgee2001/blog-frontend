@@ -18,7 +18,9 @@ export function PostsShow(props) {
           Image URL: <input defaultValue={props.post.image} type="text" name="image" />
         </div>
         <div>
-          <button type="submit">Update</button>
+          <button type="submit" className="btn btn-secondary" data-bs-dismiss="modal">
+            Update
+          </button>
         </div>
       </form>
     </div>
