@@ -6,7 +6,7 @@ import axios from "axios";
 import { PostsShow } from "./PostsShow";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
-import { LogoutLink } from "./Logout";
+import { LogoutLink } from "./LogoutLink";
 export function Content() {
   const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
 
