@@ -54,6 +54,9 @@ export function Content() {
   useEffect(handleIndexPosts, []);
   return (
     <div className="container">
+      <Signup />
+      <Login />
+      <LogoutLink />
       <PostsNew onCreatePost={handleCreatePost} />
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
