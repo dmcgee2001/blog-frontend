@@ -19,7 +19,7 @@ export function PostsShowPage() {
       <h1> Post Info</h1>
       <h2>{post.title}</h2>
       <p>{post.body}</p>
-      <p>{post.image}</p>
+      <img src={post.image} alt="" />
     </div>
   );
 }
