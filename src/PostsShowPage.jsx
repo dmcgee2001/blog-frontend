@@ -18,9 +18,8 @@ export function PostsShowPage() {
     <div id="posts-show">
       <h1> Post Info</h1>
       <h2>{post.title}</h2>
-      <p>{post.chef}</p>
-      <p>{post.ingredients}</p>
-      <p>{post.directions}</p>
+      <p>{post.body}</p>
+      <p>{post.image}</p>
     </div>
   );
 }
