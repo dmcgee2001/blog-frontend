@@ -40,13 +40,8 @@ export function Header() {
                 </a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/login">
-                  Login
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/signup" className="nav-link" href="#posts-index">
-                  Create an Account
+                <Link to="/posts/new" className="nav-link" href="#posts-index">
+                  Write a Post
                 </Link>
               </li>
               <li className="nav-item dropdown">
@@ -57,18 +52,18 @@ export function Header() {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Other
+                  Account
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="#/posts/new">
-                      Write a New Post
-                    </a>
+                    <Link className="dropdown-item" to="/login">
+                      Login
+                    </Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Contact Us
-                    </a>
+                    <Link to="/signup" className="dropdown-item">
+                      Create an Account
+                    </Link>
                   </li>
                   <li>
                     <hr className="dropdown-divider" />
