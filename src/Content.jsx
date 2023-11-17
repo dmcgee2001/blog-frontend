@@ -58,8 +58,8 @@ export function Content() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/posts/new" element={<PostsNew onCreatePost={handleCreatePost} />} />
         <Route path="/posts" element={<PostsIndex posts={posts} onShowPost={handleShowPost} />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
-      <Login />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} />
       </Modal>

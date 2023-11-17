@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { Modal } from "./Modal";
 export function Header() {
   const handleClick = (event) => {
     event.preventDefault();
@@ -9,6 +10,7 @@ export function Header() {
   };
   return (
     <header>
+      <Modal />
       <nav className="navbar navbar-expand-lg bg-info">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
@@ -33,9 +35,14 @@ export function Header() {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#posts-index">
+                <a className="nav-link" href="/posts">
                   All Posts
                 </a>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/login">
+                  Login
+                </Link>
               </li>
               <li className="nav-item">
                 <Link to="/signup" className="nav-link" href="#posts-index">
