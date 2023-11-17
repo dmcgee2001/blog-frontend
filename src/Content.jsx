@@ -7,6 +7,7 @@ import { PostsNew } from "./PostsNew";
 import { Modal } from "./Modal";
 import { PostsShow } from "./PostsShow";
 import { Login } from "./Login";
+import { PostsShowPage } from "./PostsShowPage";
 export function Content() {
   const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
 
@@ -59,6 +60,7 @@ export function Content() {
         <Route path="/posts/new" element={<PostsNew onCreatePost={handleCreatePost} />} />
         <Route path="/posts" element={<PostsIndex posts={posts} onShowPost={handleShowPost} />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/posts/:id" element={<PostsShowPage />} />
       </Routes>
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} />
