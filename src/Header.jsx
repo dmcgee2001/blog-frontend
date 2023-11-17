@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
+import axios from "axios";
 export function Header() {
+  const handleClick = (event) => {
+    event.preventDefault();
+    delete axios.defaults.headers.common["Authorization"];
+    localStorage.removeItem("jwt");
+    window.location.href = "/";
+  };
   return (
     <header>
       <nav className="navbar navbar-expand-lg bg-info">
@@ -47,7 +54,7 @@ export function Header() {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="#posts-new">
+                    <a className="dropdown-item" href="#/posts/new">
                       Write a New Post
                     </a>
                   </li>
@@ -60,8 +67,8 @@ export function Header() {
                     <hr className="dropdown-divider" />
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Donate
+                    <a className="dropdown-item" href="#" onClick={handleClick}>
+                      Logout
                     </a>
                   </li>
                 </ul>
