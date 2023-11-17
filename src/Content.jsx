@@ -1,10 +1,11 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Routes, Route } from "react-router-dom";
+import { Signup } from "./Signup";
 import { PostsIndex } from "./PostsIndex";
 import { PostsNew } from "./PostsNew";
 import { Modal } from "./Modal";
-import { useState, useEffect } from "react";
-import axios from "axios";
 import { PostsShow } from "./PostsShow";
-import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
 export function Content() {
@@ -54,7 +55,9 @@ export function Content() {
   useEffect(handleIndexPosts, []);
   return (
     <div className="container">
-      <Signup />
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
       <Login />
       <LogoutLink />
       <PostsNew onCreatePost={handleCreatePost} />

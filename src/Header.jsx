@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export function Header() {
   return (
     <header>
@@ -28,6 +29,11 @@ export function Header() {
                 <a className="nav-link" href="#posts-index">
                   All Posts
                 </a>
+              </li>
+              <li className="nav-item">
+                <Link to="/signup" className="nav-link" href="#posts-index">
+                  Create an Account
+                </Link>
               </li>
               <li className="nav-item dropdown">
                 <a
